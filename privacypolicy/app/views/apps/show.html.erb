@@ -1,15 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @app.name %>
-</p>
-
-<p>
-  <b>Iconurl:</b>
-  <%= @app.iconurl %>
-</p>
-
-
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
+<div class="text-center">
+	<img src="/assets/<%= @app.iconurl%>" style="border-radius:10px"/><h1><%= @app.name %> Privacy Policy</h1>
+	
+</div>
