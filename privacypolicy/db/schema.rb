@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140924015021) do
+ActiveRecord::Schema.define(:version => 20140924021458) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
     t.string   "iconurl"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "privacy_policy_sections", :force => true do |t|
+    t.string   "header"
+    t.string   "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "app_id"
   end
 
 end
