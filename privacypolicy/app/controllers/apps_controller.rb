@@ -2,13 +2,16 @@ class AppsController < ApplicationController
   # GET /apps
   # GET /apps.json
   def index
-    raise ActiveRecord::RecordNotFound
+    @apps = App.all
   end
 
   # GET /apps/1
   # GET /apps/1.json
   def show
     @app = App.find(params[:id])
+
+    @sections = PrivacyPolicySection.find_all_by_app_id(@app.id)
+    @sections = @sections.sort_by { |s| s[:order] }
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<div class="text-center">
-	<img src="/assets/<%= @app.iconurl%>" style="border-radius:10px"/><h1><%= @app.name %> Privacy Policy</h1>
-	
+<div class="text-center" style="max-width:600px; margin:auto">
+	<h1>
+		<img src="/assets/<%= @app.iconurl%>" style="border-radius:10px; height:50px; width:50px"/>
+		<%= @app.name %> Privacy Policy
+	</h1>
+	<br />
+	<% @sections.each do |section| %>
+		<h3 style="text-align:left"><%= section.header %></h3>
+		<p style="text-align:left"><%= section.body %></p>
+		<br />
+	<% end %>
 </div>

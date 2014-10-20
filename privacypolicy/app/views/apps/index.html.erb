@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<div class="text-center" style="max-width:600px; margin:auto">
+	<% @apps.each do |app| %>
+		<a href="/apps/<%= app.id %>">
+			<img src="/assets/<%= app.iconurl %>" style="border-radius:25px"/>
+		</a>
+		<h3 style="text-color:blue !important"><%= app.name %></h3>
+		<br />
+	<% end %>
+</div>
